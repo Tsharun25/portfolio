@@ -253,11 +253,32 @@
   }
 
   .offer-summary {
-    @apply flex items-center justify-between gap-[18px] p-[22px];
+    @apply grid gap-4 p-[22px];
+  }
+
+  .profile-spotlight {
+    @apply flex items-center gap-4 rounded-lg border border-[#10231d14] bg-[#fbf8f0] p-3;
   }
 
   .profile-photo {
-    @apply h-20 w-20 shrink-0 rounded-lg border-4 border-white object-cover object-center shadow-[0_18px_34px_rgba(16,35,29,0.18)];
+    @apply h-28 w-28 shrink-0 rounded-lg border-4 border-white object-cover object-center shadow-[0_18px_34px_rgba(16,35,29,0.18)];
+  }
+
+  .profile-spotlight p {
+    @apply mb-1 text-[0.78rem] font-black uppercase tracking-[0.04em] text-[#047857];
+  }
+
+  .profile-spotlight strong,
+  .profile-spotlight span {
+    @apply block;
+  }
+
+  .profile-spotlight strong {
+    @apply text-[1.1rem] leading-[1.25] text-[#10231d];
+  }
+
+  .profile-spotlight span {
+    @apply mt-1 text-[0.9rem] leading-[1.4] text-[#52665f];
   }
 
   .offer-summary p,
@@ -925,6 +946,14 @@
 
   .hero-actions a {
     @apply w-full;
+  }
+
+  .profile-spotlight {
+    @apply items-start;
+  }
+
+  .profile-photo {
+    @apply h-24 w-24;
   }
 
   .final-cta {

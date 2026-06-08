@@ -540,7 +540,14 @@ function App() {
               </div>
             </div>
             <div className="offer-summary">
-              <img className="profile-photo" src="/harun.jpg" alt="Harun Ar Rashid" />
+              <div className="profile-spotlight">
+                <img className="profile-photo" src="/harun.jpg" alt="Harun Ar Rashid" />
+                <div>
+                  <p>Harun Ar Rashid</p>
+                  <strong>MERN Stack Developer</strong>
+                  <span>Available for remote freelance projects</span>
+                </div>
+              </div>
               <div>
                 <p>Best for</p>
                 <strong>Founders, agencies, and business owners who need a reliable web app builder.</strong>
