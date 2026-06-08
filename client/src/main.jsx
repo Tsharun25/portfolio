@@ -540,6 +540,7 @@ function App() {
               </div>
             </div>
             <div className="offer-summary">
+              <img className="profile-photo" src="/harun.jpg" alt="Harun Ar Rashid" />
               <div>
                 <p>Best for</p>
                 <strong>Founders, agencies, and business owners who need a reliable web app builder.</strong>
