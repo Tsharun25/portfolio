@@ -24,6 +24,13 @@ app.use(
 );
 app.use(express.json({ limit: "1mb" }));
 
+app.get("/", (_request, response) => {
+  response.json({
+    ok: true,
+    service: "harun-portfolio-api"
+  });
+});
+
 app.get("/api/health", async (_request, response) => {
   try {
     await connectDatabase();
