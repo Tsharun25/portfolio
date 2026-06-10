@@ -512,6 +512,15 @@
     @apply relative w-full max-w-[310px];
   }
 
+  .project-preview-image {
+    @apply max-w-none overflow-hidden rounded-lg border border-white/20 bg-white shadow-[0_18px_34px_rgba(0,0,0,0.18)];
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-preview-image img {
+    @apply h-full w-full object-cover;
+  }
+
   .preview-browser {
     @apply overflow-hidden rounded-lg border border-white/20 bg-white/10 shadow-[0_18px_34px_rgba(0,0,0,0.18)];
   }

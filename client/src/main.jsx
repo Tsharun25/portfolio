@@ -33,6 +33,7 @@ import "./styles.css";
 const contactEmail = "tsharun26@gmail.com";
 const whatsappNumber = "+880 1710071135";
 const whatsappLink = "https://wa.me/8801710071135";
+const apiBaseUrl = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 
 function WhatsAppIcon({ size = 18 }) {
   return (
@@ -63,7 +64,8 @@ const projects = [
     preview: {
       label: "Care Portal",
       metric: "24/7",
-      icon: HeartPulse
+      icon: HeartPulse,
+      image: "/projects/shebasathi.png"
     }
   },
   {
@@ -80,7 +82,8 @@ const projects = [
     preview: {
       label: "CRM Pipeline",
       metric: "SaaS",
-      icon: BarChart3
+      icon: BarChart3,
+      image: "/projects/flowpilot-crm.png"
     }
   },
   {
@@ -97,7 +100,8 @@ const projects = [
     preview: {
       label: "Storefront",
       metric: "Cart",
-      icon: ShoppingBag
+      icon: ShoppingBag,
+      image: "/projects/shopverse.png"
     }
   },
   {
@@ -336,6 +340,17 @@ const testimonials = [
 function ProjectPreview({ project }) {
   const PreviewIcon = project.preview.icon;
 
+  if (project.preview.image) {
+    return (
+      <div className="project-preview project-preview-image">
+        <img src={project.preview.image} alt={`${project.title} preview`} />
+        <div className="preview-badge">
+          <PreviewIcon size={22} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="project-preview">
       <div className="preview-browser">
@@ -389,7 +404,7 @@ function App() {
     setStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`${apiBaseUrl}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formState)
